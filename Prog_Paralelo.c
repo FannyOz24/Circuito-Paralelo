@@ -1,29 +1,25 @@
+//Fanny Selene Ortiz Blanco 4°B MAAU
+//Programa para calcular la resistencia y la corriente total 
 #include <stdio.h>
-int main(void)
+int main()
 {
-int integer1;
-int integer2;
-int integer3;
-int voltage;
-printf("Agrega el valor del voltage: ");
-scanf("%d",&voltage);
-printf("Agrega el valor de la R1: ");
-scanf("%d",&integer1);
-printf("Agrega el valor de la R2: ");
-scanf("%d",&integer2);
-printf("Agrega el valor de la R3: ");
-scanf("%d",&integer3);
-printf("VR1 es %dV\n" , voltage);
-printf("VR2 es %dV\n" , voltage);
-printf("VR3 es %dV\n" , voltage);
-float IRa;
-float IRb;
-float IRc;
-IRa=(float)voltage/(float)integer1;
-printf("IR1 es %.2fA\n" , IRa);
-IRb=(float)voltage/(float)integer2;
-printf("IR2 es %.2fA\n" , IRb);
-IRc=(float)voltage/(float)integer3;
-printf("IR3 es %.2fA\n" , IRc);
+    float R1, R2, R3;
+    float Voltaje,RT,I1,I2,I3,IT;
+    printf("\n Escribe el voltaje: \n");
+    scanf("%f",&Voltaje);
+    printf("\n Escribe el valor de R1,R2,R3 separadas por coma: \n");
+    scanf("%f,%f,%f",&R1,&R2,&R3);
 
+    I1=Voltaje/R1; //corriente 1
+    printf("\n La corriente 1 es: %.2f\n",I1);
+    I2=Voltaje/R2;//corriente 2
+    printf("\n La corriente 2 es: %.2f\n",I2);
+    I3=Voltaje/R3;//corriente 3
+    printf("\n La corriente 3 es: %.2f\n" ,I3);
+    IT=I3+I2+I1; //corriente total
+    RT=(1/R1)+(1/R2)+(1/R3);
+    printf("\n La corriente total es: %.2f\n ",IT);
+    RT=(1/R1)+(1/R2)+(1/R3);
+    printf("\n La resistencia total es: %.2f\n",RT);
+    return 0;
 }
